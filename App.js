@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import {createStaticNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Registro from './src/components/Registro';
+import RelojPantalla from './src/components/RelojPantalla';
+
+
+
+const Stack = createNativeStackNavigator({
+  screens: {
+    Home: {
+      screen: Registro,
+      options: {title: 'Inicio Registros',
+         headerRight: () => <RelojPantalla style={{fontSize: 18, color: 'black'}} />,
+    },
+    Profile: {
+      screen: Registro,
+    },
+  },
+}
+});
+
+const Navigation = createStaticNavigation(Stack);
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <Navigation />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
