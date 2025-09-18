@@ -1,8 +1,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Text } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import styles from "./styles/GlobalStyles";
 
 export default function RelojPantalla({ style }) {
+  const navigation = useNavigation();
   const [segundos, setSegundos] = useState(0);
   const [minutos, setMinutos] = useState(0);
   const [hora, setHora] = useState(0);
@@ -23,7 +26,7 @@ export default function RelojPantalla({ style }) {
     setHora((h) => h + 1);
   }, 3600000);
 
-  // Limpieza de intervalos al desmontar
+  
   return () => {
     clearInterval(segundosInverval);
     clearInterval(minutosInterval);
@@ -34,9 +37,28 @@ export default function RelojPantalla({ style }) {
 
 
 
+  
+  if (style) {
+    return (
+      <Text style={style}>
+        {hora}:{minutos < 10 ? `0${minutos}` : minutos}:{segundos < 10 ? `0${segundos}` : segundos}
+      </Text>
+    );
+  }
+
+  
   return (
-    <Text style={style}>
-    Horas: {hora}  Minutos:{minutos}   Segundos:{segundos < 10 ? `0${segundos}` : segundos}
-    </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Reloj Digital</Text>
+      <Text style={styles.clockText}>
+        {hora < 10 ? `0${hora}` : hora}:{minutos < 10 ? `0${minutos}` : minutos}:{segundos < 10 ? `0${segundos}` : segundos}
+      </Text>
+      <View style={{marginTop: 20}}>
+        <Button 
+          title="Volver al Registro" 
+          onPress={() => navigation.navigate('Registro')} 
+        />
+      </View>
+    </View>
   );
 }

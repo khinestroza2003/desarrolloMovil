@@ -3,9 +3,10 @@ import { StatusBar } from 'expo-status-bar';
 import {Text, View, TextInput, Button, Alert } from 'react-native';
 import styles from "../components/styles/GlobalStyles";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Registro() {
-  
+  const navigation = useNavigation();
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,7 +17,7 @@ export default function Registro() {
   
   const handleChange = (setter) => (text) => setter(text);
 
-  // Mostrar mensaje de éxito cada vez que se registra un usuario
+ 
   useEffect(() => {
     if (success) {
       const timeout = setTimeout(() => setSuccess(''), 2500);
@@ -24,11 +25,11 @@ export default function Registro() {
     }
   }, [success]);
 
-  // Mostrar alertas de progreso/meta
+  
   useEffect(() => {
     if (userRegistrados === 0) return;
     if (userRegistrados === 5) {
-      Alert.alert('¡Meta lograda!', 'Has registrado 5 usuarios 🎉');
+      Alert.alert('¡Meta lograda!', 'registramos 5 usuarios con éxito.');
     }
   }, [userRegistrados]);
   
@@ -91,6 +92,11 @@ export default function Registro() {
       {error ? <Text style={styles.error}>{error}</Text> : null}
       {success ? <Text style={{ color: 'green', marginBottom: 10 }}>{success}</Text> : null}
       <Button title="Registrar" onPress={registrarUsuario} />
+      <View style={{marginVertical: 10}} />
+      <Button 
+        title="Ir al Reloj" 
+        onPress={() => navigation.navigate('Reloj')} 
+      />
       <Text style={{marginTop: 10}}>Usuarios registrados: {userRegistrados}</Text>
       {userRegistrados < 5 && userRegistrados > 0 ? (
         <Text style={{marginTop: 5, color: '#555'}}>

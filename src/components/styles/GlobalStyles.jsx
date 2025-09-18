@@ -29,6 +29,13 @@ const styles = StyleSheet.create({
     color: 'red',
     marginBottom: 12,
   },
+  clockText: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#333',
+    marginVertical: 20,
+    fontFamily: 'monospace',
+  }
 });
 
 export default styles;
