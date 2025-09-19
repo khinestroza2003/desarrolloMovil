@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Text, View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from "./styles/GlobalStyles";
+import { Linking } from 'react-native';
+
 
 export default function RelojPantalla({ style }) {
   const navigation = useNavigation();
@@ -46,6 +48,11 @@ export default function RelojPantalla({ style }) {
     );
   }
 
+   function visitarSitio() {
+    Linking.openURL('https://github.com/khinestroza2003/desarrolloMovil')
+    console.log("Visitando sitio web...");
+  }
+
   
   return (
     <View style={styles.container}>
@@ -57,6 +64,12 @@ export default function RelojPantalla({ style }) {
         <Button 
           title="Volver al Registro" 
           onPress={() => navigation.navigate('Registro')} 
+        />
+        <br />
+
+        <Button 
+          title='Click aqui para mas informacion'
+          onPress={() => visitarSitio()} 
         />
       </View>
     </View>
