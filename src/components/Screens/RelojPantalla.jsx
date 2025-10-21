@@ -2,7 +2,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+<<<<<<< HEAD:src/components/Screens/RelojPantalla.jsx
 import styles from "../styles/GlobalStyles";
+=======
+import styles from "./styles/GlobalStyles";
+import { Linking } from 'react-native';
+
+>>>>>>> 9ee5ad72a5156e39df4be7bd82e9bb27f0788a13:src/components/RelojPantalla.jsx
 
 export default function RelojPantalla({ style }) {
   const navigation = useNavigation();
@@ -46,6 +52,11 @@ export default function RelojPantalla({ style }) {
     );
   }
 
+   function visitarSitio() {
+    Linking.openURL('https://github.com/khinestroza2003/desarrolloMovil')
+    console.log("Visitando sitio web...");
+  }
+
   
   return (
     <View style={styles.container}>
@@ -57,6 +68,12 @@ export default function RelojPantalla({ style }) {
         <Button 
           title="Volver al Registro" 
           onPress={() => navigation.navigate('Registro')} 
+        />
+        <br />
+
+        <Button 
+          title='Click aqui para mas informacion'
+          onPress={() => visitarSitio()} 
         />
       </View>
     </View>

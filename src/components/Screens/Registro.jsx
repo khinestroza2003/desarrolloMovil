@@ -17,6 +17,10 @@ export default function Registro() {
   
   const handleChange = (setter) => (text) => setter(text);
 
+  const validarEmail = (correo) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(correo);
+  };
  
   useEffect(() => {
     if (success) {
@@ -42,6 +46,12 @@ export default function Registro() {
       setError('Las contraseñas no coinciden');
       return false;
     }
+
+    if (!validarEmail(email)) {
+      setError('El correo electrónico no es válido');
+      return false;
+    }
+    
     setError('');
     return true;
   };
