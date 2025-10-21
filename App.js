@@ -1,8 +1,10 @@
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Registro from './src/components/Registro';
-import RelojPantalla from './src/components/RelojPantalla';
+import Registro from './src/components/Screens/Registro';
+import RelojPantalla from './src/components/Screens/RelojPantalla';
+import { CharacterCard } from './src/components/Screens/CharacterCard';
+import Personajes from './src/components/Screens/Personajes';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,17 @@ export default function App() {
             title: 'Reloj'
           }}
         />
+        <Stack.Screen
+          name="Personajes"
+          component={Personajes}
+          options={{ title: 'Lista de Personajes' }}
+        />
+        <Stack.Screen
+          name="Card"
+          component={CharacterCard}
+          options={{ title: 'Detalle del personaje' }}
+        />
+       
       </Stack.Navigator>
     </NavigationContainer>
   );

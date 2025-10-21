@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from "./styles/GlobalStyles";
+import styles from "../styles/GlobalStyles";
 
 export default function RelojPantalla({ style }) {
   const navigation = useNavigation();

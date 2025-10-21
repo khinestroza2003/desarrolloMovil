@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {Text, View, TextInput, Button, Alert } from 'react-native';
-import styles from "../components/styles/GlobalStyles";
+import styles from "../styles/GlobalStyles";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
@@ -96,6 +96,10 @@ export default function Registro() {
       <Button 
         title="Ir al Reloj" 
         onPress={() => navigation.navigate('Reloj')} 
+      />
+      <Button 
+        title="Lista de Personajes" 
+        onPress={() => navigation.navigate('Personajes')} 
       />
       <Text style={{marginTop: 10}}>Usuarios registrados: {userRegistrados}</Text>
       {userRegistrados < 5 && userRegistrados > 0 ? (
