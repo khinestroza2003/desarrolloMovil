@@ -2,13 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, View, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-<<<<<<< HEAD:src/components/Screens/RelojPantalla.jsx
 import styles from "../styles/GlobalStyles";
-=======
-import styles from "./styles/GlobalStyles";
-import { Linking } from 'react-native';
-
->>>>>>> 9ee5ad72a5156e39df4be7bd82e9bb27f0788a13:src/components/RelojPantalla.jsx
 
 export default function RelojPantalla({ style }) {
   const navigation = useNavigation();

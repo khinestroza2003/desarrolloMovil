@@ -5,6 +5,11 @@ import Registro from './src/components/Screens/Registro';
 import RelojPantalla from './src/components/Screens/RelojPantalla';
 import { CharacterCard } from './src/components/Screens/CharacterCard';
 import Personajes from './src/components/Screens/Personajes';
+import LoginScreen from './src/components/Screens/LoginScreen';
+import AnimalsScreen from './src/components/Screens/AnimalsScreen';
+import CreateAnimals from './src/components/Screens/CreateAnimals';
+import EditAnimal from './src/components/Screens/EditAnimal'
+import DeleteAnimals from './src/components/Screens/DeleteAnimals';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,7 +42,29 @@ export default function App() {
           component={CharacterCard}
           options={{ title: 'Detalle del personaje' }}
         />
-       
+        
+         <Stack.Screen
+         name="Login"
+         component={LoginScreen}
+         options={{title: 'inicio de session'}}
+         />
+        <Stack.Screen
+        name="Animal"
+        component={AnimalsScreen}
+        options={{title: 'Animal'}}
+        />
+       <Stack.Screen
+       name="Crear"
+       component={CreateAnimals}
+       />
+       <Stack.Screen
+       name="Editar"
+       component={EditAnimal}
+       />
+       <Stack.Screen
+       name="Borrar"
+       component={DeleteAnimals}
+       />
       </Stack.Navigator>
     </NavigationContainer>
   );

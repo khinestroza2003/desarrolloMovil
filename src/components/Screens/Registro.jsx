@@ -111,6 +111,10 @@ export default function Registro() {
         title="Lista de Personajes" 
         onPress={() => navigation.navigate('Personajes')} 
       />
+      <Button
+      title="Iniciar sesion"
+      onPress={() => navigation.navigate('Login')}
+      />
       <Text style={{marginTop: 10}}>Usuarios registrados: {userRegistrados}</Text>
       {userRegistrados < 5 && userRegistrados > 0 ? (
         <Text style={{marginTop: 5, color: '#555'}}>

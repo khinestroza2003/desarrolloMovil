@@ -1,9 +1,8 @@
 
 import { StyleSheet } from "react-native";
 
-
-
 const styles = StyleSheet.create({
+  // ✅ ====== TUS ESTILOS ORIGINALES (NO TOCADOS) ======
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -35,15 +34,12 @@ const styles = StyleSheet.create({
     color: '#333',
     marginVertical: 20,
     fontFamily: 'monospace',
-  }
-,
-  
+  },
   portraitLarge: {
     width: 300,
     height: 300,
     borderRadius: 8,
     backgroundColor: '#e04848ff',
-    
   },
   headerColumn: {
     width: '100%',
@@ -80,8 +76,7 @@ const styles = StyleSheet.create({
   },
   portraitFallbackText: {
     color: '#888',
-  }
-  ,
+  },
   card: {
     width: '100%',
     padding: 10,
@@ -96,7 +91,87 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 6,
     backgroundColor: '#eee',
-  }
+  },
+
+  // ✅ ====== ESTILOS NUEVOS PARA PANTALLAS DE ANIMALES ======
+
+  animalScroll: {
+    width: "100%",
+    padding: 20,
+  },
+
+  animalCard: {
+    width: "100%",
+    padding: 15,
+    borderRadius: 12,
+    backgroundColor: "#f9f9f9",
+    marginBottom: 20,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+  },
+
+  animalImage: {
+    width: "100%",
+    height: 200,
+    borderRadius: 12,
+    backgroundColor: "#ddd"
+  },
+
+  animalName: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginTop: 10,
+    color: "#222",
+  },
+
+  animalDesc: {
+    fontSize: 14,
+    marginTop: 5,
+    color: "#666",
+  },
+
+  buttonPrimary: {
+    width: "100%",
+    padding: 12,
+    backgroundColor: "#4C8BF5",
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 12,
+  },
+
+  buttonPrimaryText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+  buttonDanger: {
+    width: "100%",
+    padding: 12,
+    backgroundColor: "#E63946",
+    borderRadius: 10,
+    alignItems: "center",
+    marginTop: 12,
+  },
+
+  buttonDangerText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+  formInputLarge: {
+    width: "100%",
+    padding: 12,
+    height: 45,
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    marginBottom: 15,
+  },
 });
 
 export default styles;

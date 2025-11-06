@@ -13,7 +13,6 @@ export const CharacterCard = ({ navigation, route }) => {
     const character = route?.params?.character;
     const imageUrl = getCharacterImageUrl(character?.portrait_path);
 
-    // Normalizar campos que pueden venir con diferentes keys
     const name = character?.name || character?.fullName || 'Sin nombre';
     const age = character?.age || character?.edad || 'Desconocida';
     const gender = character?.gender || character?.genero || 'Desconocido';
